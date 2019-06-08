@@ -1,0 +1,17 @@
+---
+- hosts: local 
+  sudo: yes
+  user: admin
+  gather_facts: yes
+  tasks:
+    - name: Installing HTTPD Web Server
+      yum: pkg=httpd state=latest
+    - name: restarting Httpd webserver
+      service: name=httpd state=restarted
+    - name: Verify Service Status
+      shell: systemctl status httpd
+      register: result
+      until: result.stdout.find("active (running)") != -1
+      retries: 5
+      delay: 10
+    - debug: var=result

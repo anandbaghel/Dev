@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.tasks.Ant_-DescriptorImpl plugin="ant@1.2">
+  <installations>
+{% for version in ant_versions %}
+    <hudson.tasks.Ant_-AntInstallation>
+      <name>Ant_{{ version }}</name>
+      <home>/opt/apache-ant-{{ version }}</home>
+      <properties/>
+    </hudson.tasks.Ant_-AntInstallation>
+{% endfor %}
+  </installations>
+</hudson.tasks.Ant_-DescriptorImpl>

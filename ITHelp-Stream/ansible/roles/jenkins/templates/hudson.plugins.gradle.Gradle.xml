@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.gradle.Gradle_-DescriptorImpl plugin="gradle@1.24">
+  <installations>
+{% for version in gradle_versions %}
+    <hudson.plugins.gradle.GradleInstallation>
+      <name>Gradle{{ version }}</name>
+      <home>/opt/gradle-{{ version }}</home>
+      <properties/>
+      <gradleHome>/opt/gradle-{{ version }}</gradleHome>
+    </hudson.plugins.gradle.GradleInstallation>
+{% endfor %}
+  </installations>
+</hudson.plugins.gradle.Gradle_-DescriptorImpl>

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: root
+  sudo: yes
+  gather_facts: no
+  tasks:
+    - name: Add a list of users
+      user: name={{ item }} state=absent
+      with_items:
+        - admin
+        - ciuser
+        - devops

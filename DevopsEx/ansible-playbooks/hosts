@@ -1,0 +1,8 @@
+[appserver]
+ansible-node1 ansible_ssh_host=172.17.0.2 ansible_ssh_port=22 ansible_ssh_user='root'
+
+[webserver]
+ansible-node2 ansible_ssh_host=172.17.0.3 ansible_ssh_port=22 ansible_ssh_user='root'
+
+[dbserver]
+ansible-node3 ansible_ssh_host=172.17.0.4 ansible_ssh_port=22 ansible_ssh_user='root'

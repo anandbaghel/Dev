@@ -1,0 +1,7 @@
+---
+# test file for nagesh.bitbucket
+
+- hosts: localhost
+  remote_user: root
+  roles:
+    - bitbucket

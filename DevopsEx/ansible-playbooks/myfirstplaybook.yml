@@ -1,0 +1,14 @@
+---
+- hosts: appserver
+  sudo: yes
+  user: root
+  gather_facts: yes
+  vars_prompt:
+    - name: pkg
+      prompt: Install Which Package?
+      default: lynx
+      private: no
+  tasks:
+    - name: Install required package in remote node
+      action: yum name={{ pkg }} state=present
+

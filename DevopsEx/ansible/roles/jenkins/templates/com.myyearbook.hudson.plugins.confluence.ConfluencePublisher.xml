@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.myyearbook.hudson.plugins.confluence.ConfluencePublisher_-DescriptorImpl plugin="confluence-publisher@1.8">
+  <sites>
+    <com.myyearbook.hudson.plugins.confluence.ConfluenceSite>
+      <url>http://confluence.emea.kuoni.int/</url>
+      <username>jenkins</username>
+      <password>RmbU5rXxo6w4B2Anocn8Jcv7rtfER6rZjJ7SAluURrI=</password>
+    </com.myyearbook.hudson.plugins.confluence.ConfluenceSite>
+  </sites>
+</com.myyearbook.hudson.plugins.confluence.ConfluencePublisher_-DescriptorImpl>

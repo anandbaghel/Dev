@@ -1,0 +1,21 @@
+---
+
+- name: "Jenkins and plugin configuration files"
+  template: src={{ item }} dest={{ jenkins_home }}/{{ item }} owner={{ jenkins_user }} group={{ jenkins_group }}
+  with_items:
+    - config.xml
+    - com.g2one.hudson.grails.GrailsInstallation.xml
+    - hudson.plugins.accurev.AccurevSCM.xml
+    - hudson.plugins.gradle.Gradle.xml
+    - hudson.tasks.Ant.xml
+    - hudson.tasks.Maven.xml
+    - com.myyearbook.hudson.plugins.confluence.ConfluencePublisher.xml
+    - hudson.tasks.Mailer.xml
+    - org.codefirst.SimpleThemeDecorator.xml
+    - jenkins.model.JenkinsLocationConfiguration.xml
+    - org.jenkinsci.plugins.ansible.AnsibleInstallation.xml
+  notify: restart jenkins
+
+- name: "Custom CSS for banner colour"
+  template: src=custom.css dest={{ jenkins_home }}/userContent/custom.css owner={{ jenkins_user }} group={{ jenkins_group }}
+

@@ -1,0 +1,27 @@
+---
+  
+ - name: Install Debian dependencies.
+   become: yes
+   apt: name={{ item }} state=installed update_cache=yes
+   with_items: "{{ dependencies_deb }}"
+
+ - name: adding apt key.
+   apt_key:
+    id: "{{jenkins_apt_key_id_deb}}"
+    url: "{{ jenkins_apt_key_deb }} state:present "
+    
+ - name: adding jenkins repo.
+   apt_repository:
+    repo: "{{ jenkins_apt_repository_deb }}"
+    state: present
+    update_cache: yes
+  
+
+ - name: Ensure Jenkins is installed.
+   apt: name=jenkins state=installed
+   ignore_errors: yes
+   
+ - include: config.yml
+ - include: user.yml
+ - include: plugin.yml 
+ - include: waitjenkins.yml

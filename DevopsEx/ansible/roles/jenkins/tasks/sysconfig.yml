@@ -1,0 +1,37 @@
+---
+
+- name: Set HTTP port in Jenkins config.
+  lineinfile:
+    backrefs: yes
+    dest: "/etc/sysconfig/jenkins"
+    regexp: '^JENKINS_PORT='
+    line: 'JENKINS_PORT={{ jenkins_http_port }}'
+
+- name: Set AJP port in Jenkins config
+  lineinfile:
+    backrefs: yes
+    dest: "/etc/sysconfig/jenkins"
+    regexp: '^JENKINS_AJP_PORT='
+    line: 'JENKINS_AJP_PORT={{ jenkins_ajp_port }}'
+
+- name: Set Jenkins user in Jenkins config
+  lineinfile:
+    backrefs: yes
+    dest: "/etc/sysconfig/jenkins"
+    regexp: '^JENKINS_USER='
+    line: 'JENKINS_USER={{ jenkins_user }}'
+
+- name: Ensure URL prefix is present in Jenkins config
+  lineinfile:
+    backrefs: yes
+    dest: "/etc/sysconfig/jenkins"
+    regexp: '^JENKINS_ARGS='
+    line: 'JENKINS_ARGS="--prefix={{ jenkins_url_prefix }}"'
+
+- name: Ensure JAVA_ARGS are set
+  lineinfile:
+    backrefs: yes
+    dest: "/etc/sysconfig/jenkins"
+    regexp: '^JENKINS_JAVA_OPTIONS='
+    line: 'JENKINS_JAVA_OPTIONS="-Djava.awt.headless=true -Djava.io.tmpdir={{ jenkins_tmp_dir }} -XX:MaxPermSize=128m -Xms128m -Xmx1024m"'
+

@@ -1,0 +1,44 @@
+---
+
+- name: Install Java 1.7
+  yum: name=java-1.7.0-openjdk state=present
+
+- name: Install Jenkins
+  yum: name=jenkins state=present
+
+- name: Jenkins temporary dir
+  file: path={{ jenkins_tmp_dir }} state=directory owner={{ jenkins_user }} group={{ jenkins_group}}
+
+- include: sysconfig.yml
+
+- name: Change ownership of Jenkins directories
+  file: path={{ item }} owner={{ jenkins_user }} group={{ jenkins_group }} state=directory recurse=yes
+  with_items:
+    - /var/lib/jenkins
+    - /var/log/jenkins
+    - /var/cache/jenkins
+    - "{{ jenkins_tmp_dir }}"
+
+- name: Start Jenkins
+  service: name=jenkins state=started enabled=yes
+
+- name: Wait for Jenkins to start up before proceeding.
+  shell: "curl -D - --silent http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/cli/"
+  register: result
+  until: (result.stdout.find("403 Forbidden") != -1) or (result.stdout.find("200 OK") != -1) and (result.stdout.find("Please wait while") == -1)
+  retries: "{{ jenkins_connection_retries }}"
+  delay: "{{ jenkins_connection_delay }}"
+  changed_when: false
+
+- name: Get the jenkins-cli jarfile from the Jenkins server.
+  get_url:
+    url: "http://{{ jenkins_hostname }}:{{ jenkins_http_port }}{{ jenkins_url_prefix }}/jnlpJars/jenkins-cli.jar"
+    dest: "{{ jenkins_jar_location }}"
+  register: jarfile_get
+  until: "'OK' in jarfile_get.msg or 'file already exists' in jarfile_get.msg"
+  retries: 5
+  delay: 10
+
+# Update Jenkins and install configured plugins.
+- include: plugins.yml
+- include: config.yml

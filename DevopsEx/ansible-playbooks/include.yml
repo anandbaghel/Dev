@@ -1,0 +1,10 @@
+--- # FULL INCLUDE TASKS EXAMPLE
+- hosts: appserver
+  user: root
+  sudo: yes
+  gather_facts: yes 
+  tasks:
+    - include: plays/packages.yml
+    - include: date/date.yml
+    - name: Verify the telnet package is installed
+      raw: yum list installed | grep lynx > /opt/pkgs.log

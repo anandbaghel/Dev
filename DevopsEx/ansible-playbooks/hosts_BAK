@@ -1,0 +1,8 @@
+[web]
+docker-ssh-container-1 ansible_ssh_host=172.17.0.2 ansible_ssh_port=22 ansible_ssh_user='root'
+
+[app]
+docker-ssh-container-2 ansible_ssh_host=172.17.0.3 ansible_ssh_port=22 ansible_ssh_user='root'
+
+[db]
+docker-ssh-container-3 ansible_ssh_host=172.17.0.4 ansible_ssh_port=22 ansible_ssh_user='root'

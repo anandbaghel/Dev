@@ -1,0 +1,12 @@
+---
+- hosts: appserver
+  sudo: yes
+  user: root
+  gather_facts: yes
+  tasks:
+    - name: Install required package in remote node
+      action: yum name={{ item }} state=present
+      with_items:
+       - vim
+       - lynx
+       - telnet

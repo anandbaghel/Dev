@@ -1,0 +1,5 @@
+---
+- hosts: master-server
+  remote_user: root
+  roles:
+    - maven

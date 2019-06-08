@@ -1,0 +1,206 @@
+---
+
+jenkins_home: /var/lib/jenkins
+jenkins_user: jenkins
+jenkins_group: jenkins
+jenkins_hostname: localhost
+jenkins_url_prefix: "/jenkins"
+jenkins_http_port: 9090
+jenkins_ajp_port: 9009
+jenkins_url: "http://localhost:9090/jenkins"
+jenkins_tmp_dir: /var/tmp/jenkins
+
+jenkins_connection_delay: 5
+jenkins_connection_retries: 60
+
+jenkins_jar_location: /opt/jenkins-cli.jar
+
+banner_color: "#44633F"
+
+jenkins_plugins:
+  - ace-editor
+ - active-directory
+ - analysis-collector
+ - analysis-core
+ - ansible
+ - ansicolor
+ - ant
+ - antisamy-markup-formatter
+ - artifactdeployer
+ - authentication-tokens
+ - blueocean
+ - blueocean-autofavorite
+ - blueocean-commons
+ - blueocean-config
+ - blueocean-dashboard
+ - blueocean-display-url
+ - blueocean-events
+ - blueocean-github-pipeline
+ - blueocean-git-pipeline
+ - blueocean-i18n
+ - blueocean-jwt
+ - blueocean-personalization
+ - blueocean-pipeline-api-impl
+ - blueocean-rest
+ - blueocean-rest-impl
+ - blueocean-web
+ - bouncycastle-api
+ - branch-api
+ - build-monitor-plugin
+ - build-name-setter
+ - build-pipeline-plugin
+ - build-timeout
+ - build-token-root
+ - categorized-view
+ - cloudbees-folder
+ - cobertura
+ - compact-columns
+ - conditional-buildstep
+ - config-file-provider
+ - configurationslicing
+ - confluence-publisher
+ - copyartifact
+ - credentials
+ - credentials-binding
+ - crowd2
+ - custom-job-icon
+ - cvs
+ - dashboard-view
+ - delivery-pipeline-plugin
+ - deployment-notification
+ - disk-usage
+ - display-url-api
+ - docker-commons
+ - docker-plugin
+ - docker-workflow
+ - durable-task
+ - email-ext
+ - envfile
+ - envinject
+ - environment-dashboard
+ - Exclusion
+ - extended-choice-parameter
+ - extended-read-permission
+ - extensible-choice-parameter
+ - external-monitor-job
+ - favorite
+ - findbugs
+ - git
+ - git-client
+ - github
+ - github-api
+ - github-branch-source
+ - github-organization-folder
+ - gitlab-hook
+ - gitlab-plugin
+ - git-server
+ - global-build-stats
+ - gradle
+ - grails
+ - handlebars
+ - hp-application-automation-tools-plugin
+ - htmlpublisher
+ - icon-shim
+ - jackson2-api
+ - jacoco
+ - javadoc
+ - jenkins-jira-issue-updater
+ - jenkins-multijob-plugin
+ - jira
+ - jobConfigHistory
+ - job-direct-mail
+ - job-dsl
+ - jquery
+ - jquery-detached
+ - jquery-ui
+ - jsunit
+ - junit
+ - ldap
+ - mailer
+ - mail-watcher-plugin
+ - managed-scripts
+ - mapdb-api
+ - mashup-portlets-plugin
+ - matrix-auth
+ - matrix-project
+ - mattermost
+ - maven-plugin
+ - mercurial
+ - metrics
+ - mock-security-realm
+ - momentjs
+ - monitoring
+ - multi-module-tests-publisher
+ - multiple-scms
+ - node-iterator-api
+ - pam-auth
+ - Parameterized-Remote-Trigger
+ - parameterized-trigger
+ - performance
+ - permissive-script-security
+ - pipeline-build-step
+ - pipeline-graph-analysis
+ - pipeline-input-step
+ - pipeline-milestone-step
+ - pipeline-model-api
+ - pipeline-model-declarative-agent
+ - pipeline-model-definition
+ - pipeline-rest-api
+ - pipeline-stage-step
+ - pipeline-stage-tags-metadata
+ - pipeline-stage-view
+ - plain-credentials
+ - pmd
+ - publish-over-ssh
+ - pubsub-light
+ - puppet
+ - quality-gates
+ - read-only-configurations
+ - rebuild
+ - repository-connector
+ - role-strategy
+ - ruby-runtime
+ - run-condition
+ - run-condition-extras
+ - rundeck
+ - scm-api
+ - scriptler
+ - script-security
+ - shelve-project-plugin
+ - simple-theme-plugin
+ - sonar
+ - sse-gateway
+ - ssh-credentials
+ - ssh-slaves
+ - started-by-envvar
+ - structs
+ - subversion
+ - summary_report
+ - testInProgress
+ - thinBackup
+ - timestamper
+ - tmpcleaner
+ - token-macro
+ - translation
+ - uno-choice
+ - uptime
+ - vagrant
+ - variant
+ - versionnumber
+ - violations
+ - warnings
+ - windows-slaves
+ - workflow-aggregator
+ - workflow-api
+ - workflow-basic-steps
+ - workflow-cps
+ - workflow-cps-global-lib
+ - workflow-durable-task-step
+ - workflow-job
+ - workflow-multibranch
+ - workflow-scm-step
+ - workflow-step-api
+ - workflow-support
+ - xunit
+ - xvfb
+ - xvnc

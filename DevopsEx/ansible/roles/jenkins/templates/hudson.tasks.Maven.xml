@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.tasks.Maven_-DescriptorImpl>
+  <installations>
+{% for version in maven_versions %}
+    <hudson.tasks.Maven_-MavenInstallation>
+      <name>Maven-{{ version }}</name>
+      <home>/opt/apache-maven-{{ version }}</home>
+      <properties/>
+    </hudson.tasks.Maven_-MavenInstallation>
+{% endfor %}
+  </installations>
+</hudson.tasks.Maven_-DescriptorImpl>

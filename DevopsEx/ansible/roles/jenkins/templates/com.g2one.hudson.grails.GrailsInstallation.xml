@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.g2one.hudson.grails.GrailsInstallation_-DescriptorImpl plugin="grails@1.7">
+  <installations>
+{% for version in grails_versions %}
+    <com.g2one.hudson.grails.GrailsInstallation>
+      <name>GRAILS-{{ version }}</name>
+      <home>/opt/grails-{{ version }}</home>
+      <properties/>
+    </com.g2one.hudson.grails.GrailsInstallation>
+{% endfor %}
+  </installations>
+</com.g2one.hudson.grails.GrailsInstallation_-DescriptorImpl>

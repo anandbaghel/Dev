@@ -1,0 +1,12 @@
+---
+- set_fact: 
+    is_debian: "ansible_os_family=='Debian'"
+- set_fact: 
+    is_redhat: "ansible_os_family=='RedHat'"
+
+- include: redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+

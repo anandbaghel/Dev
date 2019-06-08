@@ -1,0 +1,11 @@
+---
+- hosts: webserver
+  user: root
+  sudo: yes
+  tasks:
+  - name: Install Web Server
+    action: yum name=httpd state=installed
+  - name: check the status of Web Server
+    command: systemctl status httpd
+  - name: Start the Web Server
+    command: systemctl restart httpd

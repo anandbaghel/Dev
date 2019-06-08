@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.plugins.accurev.AccurevSCM_-AccurevSCMDescriptor plugin="accurev@0.6.18">
+  <generation>86</generation>
+  <servers>
+    <hudson.plugins.accurev.AccurevSCM_-AccurevServer>
+      <name>Accurev</name>
+      <host>longscm01d.gta.travel.lcl</host>
+      <port>5050</port>
+      <username>jenkins</username>
+      <password>OBF:1wty1uuu1vno1vgf1vne1uvc1wug</password>
+      <validTransactionTypes>add,chstream,co,defcomp,defunct,keep,mkstream,move,promote,purge</validTransactionTypes>
+      <syncOperations>true</syncOperations>
+      <minimiseLogins>false</minimiseLogins>
+      <useNonexpiringLogin>false</useNonexpiringLogin>
+      <useRestrictedShowStreams>false</useRestrictedShowStreams>
+    </hudson.plugins.accurev.AccurevSCM_-AccurevServer>
+  </servers>
+  <pollOnMaster>false</pollOnMaster>
+</hudson.plugins.accurev.AccurevSCM_-AccurevSCMDescriptor>

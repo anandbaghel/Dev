@@ -1,0 +1,26 @@
+--- # TAG FUNCTIONALITY EXAMPLE
+- hosts: appserver
+  user: root
+  sudo: yes
+  gather_facts: no
+  tasks:
+    - name: Install the telnet and lynx packages
+      yum: pkg={{ item }} state=latest
+      with_items:
+        - telnet
+        - lynx
+      tags:
+        - packages
+    - name: install httpd service
+      yum: pkg=httpd state=latest
+      tags:
+        - httpd
+    - name: Verify that telnet was installed
+      raw: yum list installed | grep telnet > /opt/pkg.log
+      tags:
+        - always 
+      handlers:
+       - name: restart httpd service
+         service: name=httpd state=restarted
+         tags:
+         - restart

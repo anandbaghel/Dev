@@ -1,0 +1,8 @@
+---
+
+- hosts: jenkins
+  roles:
+
+    - { role: common, become=true }
+    - { role: linux-jdk, jdk_installer: "jdk-8u92-linux-x64"  }
+    - { role: jenkins }
