@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: serviceapp
+ labels: 
+  app: serviceapp
+  release: "1.2.3"
+spec:
+ containers:
+  - name: serviceapp
+    image: nogiboina/serviceapp:1.2.3
